@@ -1,13 +1,10 @@
 package com.manitaggarwal.bloom.controller;
 
 import com.manitaggarwal.bloom.controller.request.CreateUserRequest;
-import com.manitaggarwal.bloom.repository.User;
+import com.manitaggarwal.bloom.entiry.User;
 import com.manitaggarwal.bloom.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")

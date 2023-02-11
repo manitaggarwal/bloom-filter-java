@@ -1,4 +1,4 @@
-package com.manitaggarwal.bloom.repository;
+package com.manitaggarwal.bloom.entiry;
 
 import jakarta.persistence.*;
 import lombok.Data;

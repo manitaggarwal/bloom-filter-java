@@ -1,6 +1,6 @@
 package com.manitaggarwal.bloom.repository;
 
-import org.springframework.data.jpa.repository.support.CrudMethodMetadata;
+import com.manitaggarwal.bloom.entiry.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
