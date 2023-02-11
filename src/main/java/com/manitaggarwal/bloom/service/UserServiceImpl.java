@@ -4,8 +4,11 @@ import com.manitaggarwal.bloom.controller.request.CreateUserRequest;
 import com.manitaggarwal.bloom.entiry.User;
 import com.manitaggarwal.bloom.repository.UserRepository;
 import com.manitaggarwal.bloom.utils.BloomUtils;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +22,13 @@ public class UserServiceImpl implements UserService {
         // database call
         return userRepository.findUserByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found."));
+    }
+
+    @PostConstruct
+    private void postConstruct() {
+        // repopulating bloom filter after application starts
+        userRepository.findAll().forEach(user ->
+                bloomUtils.saveToBloomFilter(user.getUsername()));
     }
 
     @Override

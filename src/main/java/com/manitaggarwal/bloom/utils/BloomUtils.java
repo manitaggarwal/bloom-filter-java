@@ -4,8 +4,6 @@ import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 import org.springframework.stereotype.Service;
 
-import java.nio.charset.Charset;
-
 @Service
 public class BloomUtils {
 
